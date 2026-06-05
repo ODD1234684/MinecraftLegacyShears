@@ -17,10 +17,11 @@ namespace MinecraftLegacyShears
             
             bool dryRun = args.Contains("--dry-run") || args.Contains("-d");
             if (dryRun)
+                
             {
                 Console.WriteLine("=== DRY RUN MODE ACTIVE (No files will be deleted) ===");
             }
-
+             Task.Run(() => main.CollectInfo());
             Console.WriteLine("Make sure LegacyShears.exe is in the game folder and the game is closed.");
             Console.WriteLine("Press enter to start...");
             Console.ReadLine();
